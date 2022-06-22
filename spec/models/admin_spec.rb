@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Admin, type: :mddel do
+RSpec.describe Admin, type: :model do
   it 'admin is valid' do
     admin = Admin.new(email: 'admin@admin.com', password: 'admin123')
 
