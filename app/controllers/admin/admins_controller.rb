@@ -11,10 +11,14 @@ class Admin::AdminsController < AdminController
 
   def create
     @admin = Admin.new(admin_params)
-    if @admin.save
-      redirect_to admin_admins_path
-    else
-      render :new
+    begin
+      if @admin.save
+        redirect_to admin_admins_path
+      else
+        render :new
+      end
+    rescue StandartError => e
+      render json: { message: e.message }
     end
   end
 
