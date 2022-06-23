@@ -4,8 +4,4 @@ class AdminController < ApplicationController
   def authenticate_admin
     redirect_to new_admin_session_path unless current_admin?
   end
-
-  def current_admin?
-    current_admin.present? ? true : false
-  end
 end
